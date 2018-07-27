@@ -6,10 +6,10 @@
 class DecreaseSum {
   /**
    * @constructor
-   * @param {number} [number]
+   * @param {number} [numberBeforeSum]
    */
-  constructor(number) {
-    this._number = number
+  constructor(numberBeforeSum) {
+    this._numberBeforeSum = numberBeforeSum
     this._process = []
   }
 
@@ -19,7 +19,7 @@ class DecreaseSum {
    */
   calc() {
     this._process = []
-    const SUM = this._sum(this._number)
+    const SUM = this._sum(this._numberBeforeSum)
     const PROCESS = '（' + this._process.join('+') + ' の結果）'
     return { sum: SUM, process: PROCESS }
   }

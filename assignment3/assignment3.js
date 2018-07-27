@@ -6,12 +6,12 @@
 class HandGame {
   /**
    * @constructor
-   * @param {number} [userHandNum]
+   * @param {number} [userHandNumber]
    */
-  constructor(userHandNum) {
+  constructor(userHandNumber) {
     this._handKind = ['グー', 'チョキ', 'パー']
-    this._userHandNum = userHandNum
-    this._computerHandNum = this._selectComputerHandNum()
+    this._userHandNumber = userHandNumber
+    this._computerHandNumber = this._selectComputerHandNumber()
   }
 
   /**
@@ -19,7 +19,7 @@ class HandGame {
    * @return {string} - ユーザの手
    */
   userHand() {
-    return this._handKind[this._userHandNum]
+    return this._handKind[this._userHandNumber]
   }
 
   /**
@@ -27,7 +27,7 @@ class HandGame {
    * @return {string} - コンピュータの手
    */
   computerHand() {
-    return this._handKind[this._computerHandNum]
+    return this._handKind[this._computerHandNumber]
   }
 
   /**
@@ -35,10 +35,10 @@ class HandGame {
    * @return {string} - LOSE or DRAW or WIN
    */
   judge() {
-    if (this._userHandNum === this._computerHandNum) return 'DRAW'
+    if (this._userHandNumber === this._computerHandNumber) return 'DRAW'
 
     const USER_WIN_CONDITION = [1, 2, 0]
-    if (USER_WIN_CONDITION[this._userHandNum] === this._computerHandNum) return 'WIN'
+    if (USER_WIN_CONDITION[this._userHandNumber] === this._computerHandNumber) return 'WIN'
 
     return 'LOSE'
   }
@@ -46,7 +46,7 @@ class HandGame {
   /**
    * コンピュータの手を選択
    */
-  _selectComputerHandNum() {
+  _selectComputerHandNumber() {
     return Math.floor(Math.random() * this._handKind.length)
   }
 }

@@ -6,10 +6,10 @@
 class FizzBuzzTranslator {
   /**
    * @constructor
-   * @param {number} [number]
+   * @param {number} [numberBeforeTranslate]
    */
-  constructor(number) {
-    this._number = number
+  constructor(numberBeforeTranslate) {
+    this._numberBeforeTranslate = numberBeforeTranslate
   }
 
   /**
@@ -17,8 +17,8 @@ class FizzBuzzTranslator {
    * @return {array}
    */
   translate() {
-    const NUMBER_RANGE = this._numberToNumberRange(this._number)
-    return NUMBER_RANGE.map(this._numberToDivideString)
+    const numberRange = this._numberToNumberRange(this._numberBeforeTranslate)
+    return numberRange.map(this._numberToDivideString)
   }
 
   /**
@@ -28,12 +28,12 @@ class FizzBuzzTranslator {
    * @return {array}
    */
   _numberToNumberRange(number) {
-    const NUMBER_RANGE = []
+    const numberRange = []
     for (let i = 1; i < number; i++) {
-      NUMBER_RANGE.push(i)
+      numberRange.push(i)
     }
 
-    return NUMBER_RANGE
+    return numberRange
   }
 
   /**

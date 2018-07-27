@@ -17,17 +17,17 @@ class CountWords {
    * @return {array} - カウント情報の連想配列
    */
   count() {
-    const COUNTS = []
+    const counts = []
     const WORDS = this._sentence.split(' ')
 
     WORDS.forEach(function(word) {
-      if (!COUNTS[word]) {
-        COUNTS[word] = 0
+      if (!counts[word]) {
+        counts[word] = 0
       }
-      COUNTS[word]++
+      counts[word]++
     })
 
-    return COUNTS
+    return counts
   }
 }
 
